@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Elet brand tokens */
+  --color-cream: var(--cream);
+  --color-cream-warm: var(--cream-warm);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-teal-soft: var(--teal-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-warm-muted: var(--warm-muted);
+
+  /* Fonts are injected by next/font as CSS variables (see layout.tsx) */
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Elet brand palette (oklch) */
+  --cream: oklch(0.975 0.012 85);
+  --cream-warm: oklch(0.955 0.02 82);
+  --ink: oklch(0.18 0.015 60);
+  --ink-soft: oklch(0.36 0.015 60);
+  --teal: oklch(0.38 0.06 195);
+  --teal-deep: oklch(0.28 0.05 200);
+  --teal-soft: oklch(0.55 0.055 190);
+  --gold: oklch(0.74 0.12 78);
+  --gold-soft: oklch(0.86 0.07 82);
+  --warm-muted: oklch(0.88 0.015 80);
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--teal-deep);
+  --primary-foreground: var(--cream);
+  --secondary: var(--warm-muted);
+  --secondary-foreground: var(--ink);
+  --muted: var(--warm-muted);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--gold);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.9 0.012 80);
+  --input: oklch(0.9 0.012 80);
+  --ring: var(--teal);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility elet-editorial {
+  text-transform: lowercase;
+  letter-spacing: 0.02em;
+}
+
+@utility elet-eyebrow {
+  text-transform: lowercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
