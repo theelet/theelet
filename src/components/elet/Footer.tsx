@@ -84,7 +84,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-3 px-4 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:px-8">
           <span>© {new Date().getFullYear()} the elet karachi. all rights reserved.</span>
           <div className="flex items-center gap-4">
-            <a href="#" onClick={comingSoonHandler("privacy policy")} className="hover:text-cream">
+            <a href="/privacy-policy" className="hover:text-cream">
               privacy policy
             </a>
             <span className="elet-editorial">karachi · pakistan</span>
